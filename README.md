@@ -4,6 +4,10 @@ myUI for react
 要记得首先引入myui.css
 
 ```
+import {Button,Img} from 'myui/lib';
+```
+
+```
 const HomeUI = () => {
     const click=()=>{
         alert(9)
