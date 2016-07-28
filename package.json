@@ -1,0 +1,23 @@
+{
+  "name": "myui",
+  "version": "1.0.1",
+  "description": "myUI for react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miyapub/myui.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miyapub/myui/issues"
+  },
+  "homepage": "https://github.com/miyapub/myui#readme",
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "react": "^15.2.1"
+  }
+}
