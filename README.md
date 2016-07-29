@@ -1,10 +1,10 @@
 # myui
 myUI for react
-
+author:米衙
 要记得首先引入myui.css
 
 ```
-import {Button,Img} from 'myui/lib';
+import {Button,Img} from 'myui';
 ```
 
 ```
@@ -23,3 +23,6 @@ const HomeUI = () => {
     )
 }
 ```
+
+##联系方式
+http://www.weibo.com/miyastudio
