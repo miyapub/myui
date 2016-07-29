@@ -62,7 +62,7 @@ let HomeUI = React.createClass ({
 
 render((
   <Router history={browserHistory}>
-    <Route path="/" component={Index}>
+    <Route path="/*" component={Index}>
       <IndexRoute component={HomeUI}/>
       <Route path="buttons" component={ButtonsUI} />
     </Route>
