@@ -38,17 +38,15 @@ let Button = React.createClass ({
     componentWillReceiveProps(nextProps) {
         this.setState({
             title:nextProps.title,
-            fullWidth:nextProps.fullWidth,
-            btnStyle:nextProps.btnStyle,
+            style:this._getStyleFromBtnStyle(nextProps.btnStyle,nextProps.fullWidth),
             onClick:nextProps.onClick,
         },function(){
-            this. _setBtnStyle();
+            //this. _setBtnStyle();
         });
     },
-    _setBtnStyle(){
-        console.log('set btn style:',this.state.btnStyle);
+    _getStyleFromBtnStyle(btnStyle,fullWidth){
         let style=btn_default_style;
-        switch (this.state.btnStyle){
+        switch (btnStyle){
             case "primary":
                 style=btn_primary_style;
                 break;
@@ -67,24 +65,23 @@ let Button = React.createClass ({
             default:
                 style=btn_default_style;
         }
-        if(this.state.fullWidth){
-            
+        if(fullWidth){
             //console.log(this.refs.btn);
             //$(this.refs.btn).css('width','100%');
             style.width='100%';
+        }else{
+            style.width='auto';
         }
-        this.setState({style:style});
+        return style;
     },
     componentDidMount(){
         //render finish here
-        this._setBtnStyle();
     },
     getInitialState(){
         return {
             title:this.props.title,
             onClick: this.props.onClick,
-            fullWidth:this.props.fullWidth,
-            btnStyle:this.props.btnStyle,
+            style:this._getStyleFromBtnStyle(this.props.btnStyle,this.props.fullWidth),
         }
     },
     click(evt){
@@ -99,7 +96,7 @@ let Button = React.createClass ({
     },
     render() {
         return (
-            <button ref="btn" className='MyUI' data-btnStyle={this.state.btnStyle} style={this.state.style} onClick={this.click} >{this.state.title}</button>
+            <button ref="btn" className='MyUI' style={this.state.style} onClick={this.click} >{this.state.title}</button>
         );
     }
 });

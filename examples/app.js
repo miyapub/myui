@@ -37,7 +37,6 @@ let HomeUI = React.createClass ({
         }
     },
     btnStyleFn(evt){
-        console.log('app.js:danger');
         this.setState({btnStyle:'danger'});
     },
     click(evt){
