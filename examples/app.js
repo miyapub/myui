@@ -29,7 +29,7 @@ const ButtonsUI = () => (
 )
 
 
-let HomeUI = React.createClass ({
+const HomeUI = React.createClass ({
     getInitialState(){
         return {
             btnStyle:'primary',

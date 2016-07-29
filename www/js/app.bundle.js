@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "3da7af7800254e83d6ba"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "f2e787860906c2057211"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -675,6 +675,11 @@
 	    return _react2.default.createElement(
 	      _src.MyUI,
 	      null,
+	      _react2.default.createElement(
+	        'h2',
+	        null,
+	        'MyUI 一个react的轻UI'
+	      ),
 	      _react2.default.createElement(_src.Button, { onClick: this.click, title: this.state.count }),
 	      _react2.default.createElement(_src.Button, { title: 'tom', btnStyle: 'primary' }),
 	      _react2.default.createElement(_src.Button, { fullWidth: true, title: 'fullWidth' }),
@@ -683,7 +688,8 @@
 	      _react2.default.createElement(_src.Button, { fullWidth: true, title: 'fullWidth info', btnStyle: 'info' }),
 	      _react2.default.createElement(_src.Button, { fullWidth: true, title: 'fullWidth warning', btnStyle: 'warning' }),
 	      _react2.default.createElement(_src.Button, { fullWidth: true, title: 'fullWidth danger', btnStyle: 'danger' }),
-	      _react2.default.createElement(_src.Img, { width: '80', height: '80', src: 'http://gitlab.semioe.com/uploads/user/avatar/10/avatar.png' })
+	      _react2.default.createElement(_src.Img, { fullWidth: true, src: 'img/avatar.png' }),
+	      _react2.default.createElement(_src.Img, { width: '150', height: '150', src: 'img/avatar.png' })
 	    );
 	  }
 	});
@@ -36297,24 +36303,40 @@
 	    componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
 	        this.setState({
 	            src: nextProps.src,
-	            width: nextProps.width,
-	            height: nextProps.height,
+	            style: this._getStyle(nextProps.width, nextProps.height, nextProps.fullWidth),
+	            border_style: this._getBorderStyle(nextProps.width, nextProps.height, nextProps.fullWidth),
 	            onClick: nextProps.onClick
 	        });
 	    },
 	    componentDidMount: function componentDidMount() {
 	        //render finish here
 	    },
+	    _getStyle: function _getStyle(width, height, fullWidth) {
+	        if (fullWidth) {
+	            width = '100%';
+	            height = 'auto';
+	        }
+	        return {
+	            width: width,
+	            height: height
+	        };
+	    },
+	    _getBorderStyle: function _getBorderStyle(width, height, fullWidth) {
+	        if (fullWidth) {
+	            width = '100%';
+	            height = 'auto';
+	        }
+	        return {
+	            width: width,
+	            height: height,
+	            position: 'relative'
+	        };
+	    },
 	    getInitialState: function getInitialState() {
 	        return {
 	            src: this.props.src,
-	            width: this.props.width,
-	            height: this.props.height,
-	            border_style: {
-	                width: this.props.width + 'px',
-	                height: this.props.width + 'px',
-	                position: 'relative'
-	            },
+	            style: this._getStyle(this.props.width, this.props.height, this.props.fullWidth),
+	            border_style: this._getBorderStyle(this.props.width, this.props.height, this.props.fullWidth),
 	            onClick: this.props.onClick
 	        };
 	    },
@@ -36328,7 +36350,7 @@
 	        return _react2.default.createElement(
 	            'div',
 	            { style: this.state.border_style },
-	            _react2.default.createElement('img', { width: this.state.width, height: this.state.height, src: this.state.src }),
+	            _react2.default.createElement('img', { width: this.state.width, style: this.state.style, height: this.state.height, src: this.state.src }),
 	            _react2.default.createElement('div', { className: 'MyUI', style: style, onClick: this.click })
 	        );
 	    }
