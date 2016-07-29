@@ -45,6 +45,7 @@ let HomeUI = React.createClass ({
     render() {
         return (
           <MyUI>
+              <h2>MyUI 一个react的轻UI</h2>
               <Button onClick={this.click} title={this.state.count} />
               <Button title="tom" btnStyle="primary" />
               <Button fullWidth={true} title="fullWidth" />
@@ -53,7 +54,9 @@ let HomeUI = React.createClass ({
               <Button fullWidth={true} title="fullWidth info" btnStyle="info" />
               <Button fullWidth={true} title="fullWidth warning" btnStyle="warning" />
               <Button fullWidth={true} title="fullWidth danger" btnStyle="danger" />
-              <Img width="80" height="80" src="http://gitlab.semioe.com/uploads/user/avatar/10/avatar.png" />
+              
+              <Img fullWidth={true} src="img/avatar.png" />
+              <Img width="150" height="150" src="img/avatar.png" />
            </MyUI>
         );
     }

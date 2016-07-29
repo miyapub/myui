@@ -13,24 +13,40 @@ let Img = React.createClass ({
     componentWillReceiveProps(nextProps) {
         this.setState({
         src:nextProps.src,
-        width:nextProps.width,
-        height:nextProps.height,
+        style:this._getStyle(nextProps.width,nextProps.height,nextProps.fullWidth),
+        border_style:this._getBorderStyle(nextProps.width,nextProps.height,nextProps.fullWidth),
         onClick:nextProps.onClick,
         });
     },
     componentDidMount(){
         //render finish here
     },
+    _getStyle(width,height,fullWidth){
+        if(fullWidth){
+            width='100%';
+            height='auto'
+        }
+        return {
+            width:width,
+            height:height
+        }
+    },
+    _getBorderStyle(width,height,fullWidth){
+        if(fullWidth){
+            width='100%';
+            height='auto'
+        }
+        return {
+            width:width,
+            height:height,
+            position:'relative'
+        }
+    },
     getInitialState(){
         return {
             src:this.props.src,
-            width:this.props.width,
-            height:this.props.height,
-            border_style:{
-                width:this.props.width+'px',
-                height:this.props.width+'px',
-                position:'relative'
-            },
+            style:this._getStyle(this.props.width,this.props.height,this.props.fullWidth),
+            border_style:this._getBorderStyle(this.props.width,this.props.height,this.props.fullWidth),
             onClick: this.props.onClick
         }
     },
@@ -38,12 +54,12 @@ let Img = React.createClass ({
         Surface(evt);
         if(this.state.onClick){
             this.state.onClick();
-        }   
+        }
     },
     render() {
         return (
             <div style={this.state.border_style}>
-                <img width={this.state.width} height={this.state.height} src={this.state.src} />
+                <img width={this.state.width} style={this.state.style} height={this.state.height} src={this.state.src} />
                 <div className="MyUI" style={style} onClick={this.click}></div>
             </div>
         );
