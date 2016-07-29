@@ -44,7 +44,7 @@ let Img = React.createClass ({
         return (
             <div style={this.state.border_style}>
                 <img width={this.state.width} height={this.state.height} src={this.state.src} />
-                <div className="myui" style={style} onClick={this.click}></div>
+                <div className="MyUI" style={style} onClick={this.click}></div>
             </div>
         );
     }
