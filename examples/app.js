@@ -3,8 +3,8 @@ import { render } from 'react-dom';
 import { Router, Route, IndexRoute, Link, IndexLink, browserHistory } from 'react-router'
 import $ from 'jquery';
 
-//import {Button,Img} from './ui/index';
-import {Button,Img} from '../src';
+//import {Button,Img} from '../lib';
+import {MyUI,Button,Img} from '../src';
 
 const Index= ({ children }) => {
   return (
@@ -34,12 +34,12 @@ const HomeUI = () => {
     }
     return(
         <div>
-            <div>
+            <MyUI>
                 <Button onClick={click} title="hello" />
                 <Button title="tom" />
-                <Button title="blue" />
+                <Button fullWidth={true} title="fullWidth" />
                 <Img width="80" height="80" src="http://gitlab.semioe.com/uploads/user/avatar/10/avatar.png" />
-            </div>
+            </MyUI>
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import Surface from './plus/surface'
+import $ from 'jquery';
 let Button = React.createClass ({
     componentWillReceiveProps(nextProps) {
         this.setState({
@@ -9,11 +10,16 @@ let Button = React.createClass ({
     },
     componentDidMount(){
         //render finish here
+        if(this.state.fullWidth){
+            console.log(this.refs.btn);
+            $(this.refs.btn).css('width','100%');
+        }
     },
     getInitialState(){
         return {
             title:this.props.title,
             onClick: this.props.onClick,
+            fullWidth:this.props.fullWidth,
             className:['myui'],
         }
     },
@@ -24,8 +30,9 @@ let Button = React.createClass ({
         }
     },
     render() {
+        
         return (
-            <button className={this.state.className} onClick={this.click}>{this.state.title}</button>
+            <button ref="btn" className={this.state.className} onClick={this.click}>{this.state.title}</button>
         );
     }
 });
