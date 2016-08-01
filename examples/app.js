@@ -4,7 +4,7 @@ import { Router, Route, IndexRoute, Link, IndexLink, browserHistory } from 'reac
 import $ from 'jquery';
 
 //import {Button,Img} from '../lib';
-import {MyUI,Button,Img} from '../src';
+import {MyUI,Button,Img,A,CheckBox} from '../src';
 
 const Index= ({ children }) => {
   return (
@@ -42,10 +42,15 @@ const HomeUI = React.createClass ({
     click(evt){
         this.setState({count:this.state.count+1});
     },
+    checkBox(bool){
+      console.log(bool);
+    },
     render() {
         return (
           <MyUI>
               <h2>MyUI 一个react的轻UI</h2>
+              <A href="www.baidu.com" title="hehehe" />
+              <CheckBox title="CheckBox" value="1" onClick={this.checkBox} />
               <Button onClick={this.click} title={this.state.count} />
               <Button title="tom" btnStyle="primary" />
               <Button fullWidth={true} title="fullWidth" />
@@ -57,6 +62,8 @@ const HomeUI = React.createClass ({
               
               <Img fullWidth={true} src="img/avatar.png" />
               <Img width="150" height="150" src="img/avatar.png" />
+
+              <h2>SKILLS:</h2>
            </MyUI>
         );
     }

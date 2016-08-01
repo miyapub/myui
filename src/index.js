@@ -1,7 +1,10 @@
-import React from 'react';
 import MyUI from './myui';
 import Button from './button';
 import Img from './img';
-exports.MyUI=MyUI
-exports.Button=Button
-exports.Img=Img
+import A from './a';
+import CheckBox from './checkbox';
+exports.MyUI=MyUI;
+exports.Button=Button;
+exports.Img=Img;
+exports.A=A;
+exports.CheckBox=CheckBox;
