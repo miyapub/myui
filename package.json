@@ -1,6 +1,6 @@
 {
   "name": "myui",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "myUI for react",
   "main": "./lib/index.js",
   "scripts": {
