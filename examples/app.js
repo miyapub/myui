@@ -49,8 +49,9 @@ const HomeUI = React.createClass ({
         return (
           <MyUI>
               <h2>MyUI 一个react的轻UI</h2>
-              <A href="www.baidu.com" title="hehehe" />
-              <CheckBox title="CheckBox" value="1" onClick={this.checkBox} />
+              <A href="https://www.npmjs.com/package/myui" title="MyUI" />
+              <CheckBox title="我同意协议" onClick={this.checkBox} />
+              <CheckBox title="默认勾选"　checked={true} onClick={this.checkBox} />
               <Button onClick={this.click} title={this.state.count} />
               <Button title="tom" btnStyle="primary" />
               <Button fullWidth={true} title="fullWidth" />

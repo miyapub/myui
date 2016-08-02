@@ -2,7 +2,9 @@ import React from 'react';
 import Surface from './plus/surface';
 const titleStyle={
     display: 'inline-block',
-    verticalAlign: 'top'
+    verticalAlign: 'top',
+    height: '26px',
+    lineHeight: '26px'
 }
 const CheckedIStyle={
     background:'url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA6klEQVR4XqXSIWtCURiH8VcdJsG0tGQaXBiY/AALlqVVB4JJWLIIBmE4Bgu33nphbAxu3WCfwGASBoPBkskqg5lEOT7hBQ9vOR72h194yxMOR5xzErlLbOEwLUvcGihQwQa3MYEa3nCq9x2+YgLPuNBjhhRybGCIaz3WuMHu2EALD949wALiBx6VXR0Fqnp/IBezCZyykVc49YczMSsj8e6RF7lCB6LGWNrACXpIlEb0wxw2RwZm6E88xy8crC2aYmYf8Qdd7GCX4TMUgLyjZyJr3EOCAfWCvnenWAUDRo42vvEkgZV4RPnP9hfuOq4+5vdLAAAAAElFTkSuQmCC") no-repeat center center',
@@ -34,10 +36,10 @@ const CheckedStyle={
     margin: '2px 7px 0 0',
     position: 'relative',
     overflow: 'hidden',
-    boxShadow: '0 0 1px #ccc',
     borderRadius: '3px',
     background: 'linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%)',
-    border: '1px solid #ccc'
+    border: '1px solid #ccc',
+    boxShadow: 'inset 0 0 5px 1px #ccc'
 }
 const unCheckedStyle={
     width: '22px',
@@ -63,11 +65,13 @@ let CheckBox = React.createClass ({
     },
     componentDidMount(){
         //render finish here
-        if(!this.state.checked){
-            this.setState({checked:false},function(){
-                this.check(this.state.checked);
-            });
+        let bool=false;
+        if(this.state.checked){
+            bool=true;
         }
+        this.setState({checked:bool},function(){
+            this.check(this.state.checked);
+        });
         
     },
     getInitialState(){

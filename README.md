@@ -3,7 +3,17 @@
 #####作者:米衙
 #####说明：
 >这是一个react的轻UI，目前我只完成了Button和Img两个组件。
-
+#####更新
+2015-08-02 新增了　Ａ和CheckBox　两个组件
+A组件：
+```
+<A href="https://www.npmjs.com/package/myui" title="MyUI" />
+```
+CheckBox组件:
+```
+<CheckBox title="我同意协议" onClick={this.checkBox} />
+<CheckBox title="默认勾选"　checked={true} onClick={this.checkBox} />
+```
 ###安装：
 
 ```
