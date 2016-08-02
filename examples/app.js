@@ -4,7 +4,7 @@ import { Router, Route, IndexRoute, Link, IndexLink, browserHistory } from 'reac
 import $ from 'jquery';
 
 //import {Button,Img} from '../lib';
-import {MyUI,Background,Button,Img,A,CheckBox} from '../src';
+import {MyUI,ChinaMap,Background,Button,Img,A,CheckBox} from '../src';
 
 const Index= ({ children }) => {
   return (
@@ -99,6 +99,8 @@ const HomeUI = React.createClass ({
                 <p>使用简单，方便。</p>
                 <p>以后可以指定不同的背景风格</p>
               </Background>
+              <h2>ChinaMap</h2>
+              <ChinaMap/>
            </MyUI>
         );
     }

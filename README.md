@@ -4,7 +4,7 @@
 #####说明：
 >这是一个react的轻UI，目前我只完成了Button和Img两个组件。
 #####更新
-2015-08-02 新增了　Ａ和CheckBox　两个组件
+2015-08-02 新增了　Ａ、CheckBox、Background等３个组件
 A组件：
 ```
 <A href="https://www.npmjs.com/package/myui" title="MyUI" />
@@ -13,6 +13,15 @@ CheckBox组件:
 ```
 <CheckBox title="我同意协议" onClick={this.checkBox} />
 <CheckBox title="默认勾选"　checked={true} onClick={this.checkBox} />
+```
+Background组件:
+```
+    <Background width='100%' height='auto' full={false}>
+    <h3>一个背景组件</h3>
+    <p>该组件用css3动画实现，可以指定大小，或者全屏模式</p>
+    <p>使用简单，方便。</p>
+    <p>以后可以指定不同的背景风格</p>
+</Background>
 ```
 ###安装：
 
