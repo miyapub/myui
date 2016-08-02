@@ -5,7 +5,7 @@ const titleStyle={
     verticalAlign: 'top'
 }
 const CheckedIStyle={
-    background:'url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA6klEQVR4XqXSIWtCURiH8VcdJsG0tGQaXBiY/AALlqVVB4JJWLIIBmE4Bgu33nphbAxu3WCfwGASBoPBkskqg5lEOT7hBQ9vOR72h194yxMOR5xzErlLbOEwLUvcGihQwQa3MYEa3nCq9x2+YgLPuNBjhhRybGCIaz3WuMHu2EALD949wALiBx6VXR0Fqnp/IBezCZyykVc49YczMSsj8e6RF7lCB6LGWNrACXpIlEb0wxw2RwZm6E88xy8crC2aYmYf8Qdd7GCX4TMUgLyjZyJr3EOCAfWCvnenWAUDRo42vvEkgZV4RPnP9hfuOq4+5vdLAAAAAElFTkSuQmCC") no-repeat center',
+    background:'url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA6klEQVR4XqXSIWtCURiH8VcdJsG0tGQaXBiY/AALlqVVB4JJWLIIBmE4Bgu33nphbAxu3WCfwGASBoPBkskqg5lEOT7hBQ9vOR72h194yxMOR5xzErlLbOEwLUvcGihQwQa3MYEa3nCq9x2+YgLPuNBjhhRybGCIaz3WuMHu2EALD949wALiBx6VXR0Fqnp/IBezCZyykVc49YczMSsj8e6RF7lCB6LGWNrACXpIlEb0wxw2RwZm6E88xy8crC2aYmYf8Qdd7GCX4TMUgLyjZyJr3EOCAfWCvnenWAUDRo42vvEkgZV4RPnP9hfuOq4+5vdLAAAAAElFTkSuQmCC") no-repeat center center',
     position: 'absolute',
     left: '3px',
     bottom: '2px',
@@ -16,10 +16,10 @@ const CheckedIStyle={
     transform: 'rotateZ(0deg)'
 }
 const unCheckedIStyle={
-    backgroundImage:'url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA6klEQVR4XqXSIWtCURiH8VcdJsG0tGQaXBiY/AALlqVVB4JJWLIIBmE4Bgu33nphbAxu3WCfwGASBoPBkskqg5lEOT7hBQ9vOR72h194yxMOR5xzErlLbOEwLUvcGihQwQa3MYEa3nCq9x2+YgLPuNBjhhRybGCIaz3WuMHu2EALD949wALiBx6VXR0Fqnp/IBezCZyykVc49YczMSsj8e6RF7lCB6LGWNrACXpIlEb0wxw2RwZm6E88xy8crC2aYmYf8Qdd7GCX4TMUgLyjZyJr3EOCAfWCvnenWAUDRo42vvEkgZV4RPnP9hfuOq4+5vdLAAAAAElFTkSuQmCC") no-repeat center',
+    background:'url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA6klEQVR4XqXSIWtCURiH8VcdJsG0tGQaXBiY/AALlqVVB4JJWLIIBmE4Bgu33nphbAxu3WCfwGASBoPBkskqg5lEOT7hBQ9vOR72h194yxMOR5xzErlLbOEwLUvcGihQwQa3MYEa3nCq9x2+YgLPuNBjhhRybGCIaz3WuMHu2EALD949wALiBx6VXR0Fqnp/IBezCZyykVc49YczMSsj8e6RF7lCB6LGWNrACXpIlEb0wxw2RwZm6E88xy8crC2aYmYf8Qdd7GCX4TMUgLyjZyJr3EOCAfWCvnenWAUDRo42vvEkgZV4RPnP9hfuOq4+5vdLAAAAAElFTkSuQmCC") no-repeat center center',
     position: 'absolute',
     left: '3px',
-    bottom: '-15px',
+    bottom: '-20px',
     width: '16px',
     height: '16px',
     opacity: '.5',
@@ -37,7 +37,7 @@ const CheckedStyle={
     boxShadow: '0 0 1px #ccc',
     borderRadius: '3px',
     background: 'linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%)',
-    border: '1px solid #ccc',
+    border: '1px solid #ccc'
 }
 const unCheckedStyle={
     width: '22px',
@@ -50,7 +50,7 @@ const unCheckedStyle={
     boxShadow: '0 0 1px #ccc',
     borderRadius: '3px',
     background: 'linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%)',
-    border: '1px solid #ccc',
+    border: '1px solid #ccc'
 }
 
 let CheckBox = React.createClass ({
@@ -101,8 +101,10 @@ let CheckBox = React.createClass ({
     render() {
         return (
             <div className='MyUI' onClick={this.click}>
-                <div style={this.state.divStyle}><i style={this.state.iStyle}></i></div>
-                <span onClick={this.click} style={titleStyle}>{this.state.title}</span>
+                <div style={this.state.divStyle}>
+                    <i style={this.state.iStyle}></i>
+                </div>
+                <span style={titleStyle}>{this.state.title}</span>
             </div>
         );
     }
