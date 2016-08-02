@@ -1,9 +1,11 @@
 import MyUI from './myui';
+import Background from './background';
 import Button from './button';
 import Img from './img';
 import A from './a';
 import CheckBox from './checkbox';
 exports.MyUI=MyUI;
+exports.Background=Background;
 exports.Button=Button;
 exports.Img=Img;
 exports.A=A;
